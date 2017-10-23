@@ -26,7 +26,7 @@ GIT
 
 GIT
   remote: https://github.com/finnlabs/omniauth-openid-connect.git
-  revision: c3bce4c9e9ac5412b36b00f80a44e3f1f7817222
+  revision: 096dd90cb8380c39d66d62a2daf27e6996168348
   branch: dev
   specs:
     omniauth-openid-connect (0.2.0)
@@ -312,7 +312,7 @@ GEM
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
     bcrypt (3.1.11)
-    bindata (2.4.0)
+    bindata (2.4.1)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootsnap (1.1.2)
@@ -591,7 +591,7 @@ GEM
       rack (>= 0.4)
     rack-attack (5.0.1)
       rack
-    rack-oauth2 (1.6.2)
+    rack-oauth2 (1.6.4)
       activesupport (>= 2.3)
       attr_required (>= 0.0.5)
       httpclient (>= 2.4)
