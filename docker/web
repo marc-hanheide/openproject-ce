@@ -13,11 +13,13 @@ if [ "$MIGRATE" = "true" ]; then
 	bundle exec rake db:migrate
 fi
 
-exec bundle exec passenger start \
-	-p $PORT \
-	-a "${BIND}" \
-	--min-instances "$MIN_INSTANCES" \
-	--max-pool-size "$MAX_INSTANCES" \
-	--spawn-method "$SPAWN_METHOD" \
-	--nginx-config-template "docker/nginx.conf.erb" \
-	--max-preloader-idle-time 0
+exec bundle exec thin --ssl --ssl-disable-verify -p $PORT start
+# --prefix /openproj
+# exec bundle exec passenger start \
+# 	-p $PORT \
+# 	-a "${BIND}" \
+# 	--min-instances "$MIN_INSTANCES" \
+# 	--max-pool-size "$MAX_INSTANCES" \
+# 	--spawn-method "$SPAWN_METHOD" \
+# 	--nginx-config-template "docker/nginx.conf.erb" \
+# 	--max-preloader-idle-time 0

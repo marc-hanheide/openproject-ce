@@ -27,6 +27,10 @@ RUN mkdir -p /var/db/openproject/{files,git,svn} && chown -R app:app /var/db/ope
 
 COPY docker /usr/src/app/docker
 COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY packaging/conf/configuration.yml /usr/src/app/packaging/conf/configuration.yml
+COPY config/configuration.yml /usr/src/app/config/configuration.yml
+
+RUN DATABASE_URL=sqlite3:///tmp/db.sqlite3 SECRET_TOKEN=foobar RAILS_ENV=production bundle exec rake assets:precompile
 
 # ports
 EXPOSE 80 5432
